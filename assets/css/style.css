@@ -52,6 +52,7 @@ a {
     align-items: center;
     color: var(--main-color);
     position: relative;
+    cursor: pointer;
 }
 .badge {
     background: #fff;
@@ -68,7 +69,12 @@ a {
     bottom: 5px;
     position: absolute;
 }
-
+@media (min-width: 992px){
+    .header .logo{
+        height: 100px;
+        width: auto;
+    }
+}
 /* CONTAINER */
 .container {
     padding-left: 12px;
