@@ -255,6 +255,3 @@ h3{
 #empty-card .fa-shopping-bag{
     color: var(--main-color);
 }
-#empty-card p{
-    color: yellow;
-}
