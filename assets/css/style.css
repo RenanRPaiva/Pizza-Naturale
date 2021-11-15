@@ -119,9 +119,10 @@ h1{
     font-weight: 600;
     font-size: 36px;
 }
-h2{
+h2, .h2{
     font-size: 24px;
     font-weight: 600;
+    margin-bottom: 8px;
 }
 h3{
     font-size: 16px;
@@ -233,4 +234,27 @@ h3{
         margin-right: 40px;
         margin-bottom: 0;
     }
+}
+
+/* CART */
+.cart-sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+    padding: 15px;
+}
+#btn-close-cart{
+    font-size: 30px;
+    color: var(--main-color);
+    background-color: transparent;
+    padding: 5px;
+}
+#empty-card .fa-shopping-bag{
+    color: var(--main-color);
+}
+#empty-card p{
+    color: yellow;
 }
