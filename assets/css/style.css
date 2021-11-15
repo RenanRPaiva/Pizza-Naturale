@@ -119,6 +119,11 @@ h2{
     font-size: 24px;
     font-weight: 600;
 }
+h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
 
 /* CARD */
 .card {
@@ -129,4 +134,51 @@ h2{
 .card img {
     width: 100%;
     height: auto;
+    display: block;
+}
+.card-content{
+    padding: 10px;
+}
+.card-content .card-price{
+    color: #37C957;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.card-content p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/*  BUTTON */
+.btn{
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ddd;
+    color: #424242;
+    padding: 10px 15px;
+}
+.btn-main{
+    background-color: var(--main-color);
+    color: #FFF;
+}
+.btn-main-outline{
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    background: transparent;
+}
+.btn-block{
+    width: 100%;
+}
+/* PRODUCTS GRID */
+#products-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+@media(min-width: 576px){
+    #products-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
