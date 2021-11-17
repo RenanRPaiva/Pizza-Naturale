@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -37,7 +39,7 @@
                         height="120" />
                     <div class="card-content">
                         <h3>Brocolis com Catupiry</h3>
-                        <p class="card-price">R$ 49,90</p>
+                        <p class="price">R$ 49,90</p>
                         <p>Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão:
                             A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional,
                             é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.</p>
@@ -49,7 +51,7 @@
                         height="120" />
                     <div class="card-content">
                         <h3>Brocolis com Catupiry</h3>
-                        <p class="card-price">R$ 49,90</p>
+                        <p class="price">R$ 49,90</p>
                         <p>Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão:
                             A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional,
                             é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.</p>
@@ -61,7 +63,7 @@
                         height="120" />
                     <div class="card-content">
                         <h3>Brocolis com Catupiry</h3>
-                        <p class="card-price">R$ 49,90</p>
+                        <p class="price">R$ 49,90</p>
                         <p>Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão:
                             A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional,
                             é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.</p>
@@ -73,7 +75,7 @@
                         height="120" />
                     <div class="card-content">
                         <h3>Brocolis com Catupiry</h3>
-                        <p class="card-price">R$ 49,90</p>
+                        <p class="price">R$ 49,90</p>
                         <p>Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão:
                             A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional,
                             é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.</p>
@@ -85,7 +87,7 @@
                         height="120" />
                     <div class="card-content">
                         <h3>Brocolis com Catupiry</h3>
-                        <p class="card-price">R$ 49,90</p>
+                        <p class="price">R$ 49,90</p>
                         <p>Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão:
                             A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional,
                             é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.</p>
@@ -97,7 +99,7 @@
                         height="120" />
                     <div class="card-content">
                         <h3>Brocolis com Catupiry</h3>
-                        <p class="card-price">R$ 49,90</p>
+                        <p class="price">R$ 49,90</p>
                         <p>Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão:
                             A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional,
                             é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.</p>
@@ -105,12 +107,12 @@
                     </div>
                 </article>
             </div>
-        </section> 
+        </section>
     </main>
     <footer class="footer">
         <p>Ou se preferir, chama no WhatsApp:</p>
         <a href="https://api.whatsapp.com/send/?phone=5521999999999&text=ol%C3%A1,%20gostaria%20de%20uma%20pizza%20Naturale"
-        target="_blank">
+            target="_blank">
             <i class="fab fa-whatsapp-square"></i>
             (31) 99999-9999
         </a>
@@ -119,10 +121,47 @@
         <button id="btn-close-cart">
             <i class="fas fa-times"></i>
         </button>
-        <p class="h2">Sua sacola está vazia.</p>
-        <div id="empty-card">
+        <!-- <div id="empty-card">
             <i class="fas fa-shopping-bag"></i>
+            <p class="h2">Sua sacola está vazia.</p>
+        </div> -->
+        <div id="cart-with-products">
+            <p class="h2">Resumo do Pedido:</p>
+            <ul>
+                <li class="cart-item">
+                    <img src="assets/img/pizza-brocolis-catupiry.jpg" alt="Pizza Brocolis Catupiry" width="70"
+                        height="70" />
+                    <div>
+                        <p class="h3">Brocolis com Catupiry</p>
+                        <p class="price">R$ 49,90</p>
+                    </div>
+                    <input class="form-input" type="number" min="0" value="1">
+                    <button>
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </li>
+                <li class="cart-item">
+                    <img src="assets/img/pizza-brocolis-catupiry.jpg" alt="Pizza Brocolis Catupiry" width="70"
+                        height="70" />
+                    <div>
+                        <p class="h3">Brocolis com Catupiry</p>
+                        <p class="price">R$ 49,90</p>
+                    </div>
+                    <input class="form-input" type="number" min="0" value="1">
+                    <button>
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </li>
+
+            </ul>
+            <div class="cart-total">
+                <p class="h2">Total</p>
+                <p>R$ 99,80</p>
+            </div>
+            <button class="btn btn-main-outline btn-block">Adicionar mais Itens</button>
+            <button class="btn btn-main btn-block ">Fazer Pedido</button>
         </div>
+
     </aside>
 
 </body>
