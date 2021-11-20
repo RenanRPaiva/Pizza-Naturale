@@ -249,9 +249,11 @@ h3, .h3{
     height: 100vh;
     background-color: #FFF;
     padding: 15px;
-    display: flex;
-    flex-direction: column;
     display: none;
+    flex-direction: column;
+}
+.cart-sidebar-open{
+    display: flex;
 }
 #btn-close-cart{
     font-size: 30px;
@@ -259,6 +261,7 @@ h3, .h3{
     background-color: transparent;
     padding: 5px;
     align-self: flex-end;
+    cursor: pointer;
 }
 #empty-card{
     display: flex;
