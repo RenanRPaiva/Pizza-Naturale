@@ -1,10 +1,9 @@
 // Tradução do termo INNER = significa "Interno", innerhtml significa "Dentro do html"
+var cartSidebar = document.querySelector('.cart-sidebar')
 function openSidebar(){
-    var cartSidebar = document.querySelector('.cart-sidebar')
     cartSidebar.classList.add('cart-sidebar-open')
 }
 function closeSidebar(){
-    var cartSidebar = document.querySelector('.cart-sidebar')
     cartSidebar.classList.remove('cart-sidebar-open')
 }
 document.getElementById('btn-cart').addEventListener('click', openSidebar)
