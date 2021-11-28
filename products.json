@@ -1,0 +1,109 @@
+{
+  "groups": [
+    {
+      "id": "43860f85-a873-4e20-b173-36d3198bb881",
+      "name": "Pizzas Especiais",
+      "products": [
+        {
+          "id": "d18ab5f1-08b9-4db7-b05e-c3d53c35958c",
+          "name": "Banana, Aveia com Canela",
+          "image": "assets/img/pizza-banana-aveia-canela.jpg",
+          "description": "São ricos de fibras, vitaminas e antioxidantes. Além desses ingredientes, a Pizza de aveia, banana e canela ainda contém leite condensado, que dá um sabor especial a essa pizza.",
+          "price": 49.9
+        },
+        {
+          "id": "4519b494-42d5-4a19-a268-ab373472665c",
+          "name": "Brócolis com Catupiri",
+          "image": "assets/img/pizza-brocolis-catupiry.jpg",
+          "description": "Se você não quiser comer a pizza vegetariana apenas com catupiry, existe uma outra versão: A Pizza de Brócolis com Catupiri. Nesse sabor, o frango, presente na receita tradicional, é substituído pelo brócolis, algo que agrega um grande valor nutritivo a essa pizza.",
+          "price": 49.9
+        },
+        {
+          "id": "f6b0f72a-ce7a-483b-882b-312bf30916cd",
+          "name": "Espinafre",
+          "image": "assets/img/pizza-espinafre.jpg",
+          "description": "Pizza vegana de espinafre, escarola, radicchio e champignon.",
+          "price": 49.9
+        },
+        {
+          "id": "91b9b877-d496-49b9-ba57-b946fd454c95",
+          "name": "Sem Glutem",
+          "image": "assets/img/pizza-sem-glutem.jpg",
+          "description": "Quem não pode consumir glúten, não precisa deixar de comer pizza. Com Massa de grão-de-bico e cobertura de presunto.",
+          "price": 49.9
+        }
+      ]
+    },
+    {
+      "id": "5973f204-1870-4060-9698-36bd6bd905bf",
+      "name": "Pizzas Premium",
+      "products": [
+        {
+          "id": "cd04e5b7-2554-4f56-a652-9d8a1205563d",
+          "name": "Milho Verde",
+          "image": "assets/img/pizza-milho-verde.jpg",
+          "description": " Além do milho, que é um alimento rico em fibras, essa pizza tem como ingredientes a muçarela, o molho de tomate, o creme de leite, o orégano e azeitonas.",
+          "price": 59.9
+        },
+        {
+          "id": "e9f7997b-e223-44b0-b0ba-cca5058251b8",
+          "name": "Mascarpone",
+          "image": "assets/img/pizza-mascarpone.jpg",
+          "description": "Pizza vegetariana de mascarpone, azeitonas e pesto.",
+          "price": 59.9
+        },
+        {
+          "id": "5b20770d-46a2-4d60-aade-6e5c4ddeb73c",
+          "name": "Prestigio",
+          "image": "assets/img/pizza-prestigio.jpg",
+          "description": "Inspirada no famoso chocolate da Nestlé, a Pizza Prestígio é feita com chocolate meio amargo misturado com creme de leite. Sobre o chocolate, é salpicado o coco ralado. A presença do creme de leite faz com que a pizza não fique enjoativa.",
+          "price": 59.9
+        },
+        {
+          "id": "1b0c89ec-30c2-4145-ac2a-5e2c1ae3ccf5",
+          "name": "Caprese",
+          "image": "assets/img/pizza-caprese.jpg",
+          "description": "Leva pesto de azeitona, tomates e mussarela de búfala.",
+          "price": 59.9
+        },
+        {
+          "id": "8fb33c4e-0b87-47c9-b085-87dfd4189b3a",
+          "name": "Banana Canela",
+          "image": "assets/img/pizza-banana-canela.jpg",
+          "description": " Ela é feita com doce de banana caramelada polvilhada com canela.",
+          "price": 59.9
+        }
+      ]
+    },
+    {
+      "id": "2a386e1d-c44c-4822-8b7f-397ec7f18c26",
+      "name": "Bebidas",
+      "products": [
+        {
+          "id": "306872c9-352f-45a9-aef2-b034ef07d23d",
+          "name": "Coca-cola 2L",
+          "image": "assets/img/bebidas-coca-cola.jpg",
+          "price": 12.9
+        },
+        {
+          "id": "35ad3380-556a-48ed-892f-b12b25b52a03",
+          "name": "Fanta 2L",
+          "image": "assets/img/bebidas-fanta.jpg",
+          "price": 12.9
+        },
+        {
+          "id": "1ecccf5b-e2c2-4e51-a2f2-1b8aa3b73dd7",
+          "name": "Mate Couro 2L",
+          "image": "assets/img/bebidas-mate-couro.jpg",
+          "price": 12.9
+        },
+        {
+          "id": "c0dad15f-6bcb-4143-a804-e7ebbf267167",
+          "name": "Kuat 2L",
+          "image": "assets/img/bebidas-kuat.jpg",
+          "price": 10.9
+        }
+      ]
+    }
+  ]
+}
