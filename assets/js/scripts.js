@@ -78,13 +78,36 @@ const setupAddToCart = () => {
         btn.addEventListener('click', addToCart)
     })
 }
-const setupRemoveOfCart = () => {
+const hadlekeydown = event => {
+    if (event.key == '-' || event.key == '.'){
+        event.preventDefault()
+    }      
+}
+const handleUpdateQty = event => {
+    const { id } = event.target.dataset  
+    const qty = parseInt(event.target.value)
+    if (qty > 0){
+    const index = productsCart.findIndex(item => item.id == id)
+    productsCart[index].qty = qty
+    handleCartUpdate(false)
+   }else{
+    productsCart = productsCart.filter((product)=> product.id != id)
+    handleCartUpdate()
+   }    
+}
+const setupCartEvents = () => {
     const btnRemoveCartEls = document.querySelectorAll('.btn-remove-cart')
     btnRemoveCartEls.forEach((btn) => {
         btn.addEventListener('click', removeOfCart)
     })
+    const inputsQtyEl = document.querySelectorAll('.input-qty-cart')
+    inputsQtyEl.forEach((input) => {
+        input.addEventListener('keydown', hadlekeydown)
+        input.addEventListener('keyup', handleUpdateQty)
+        input.addEventListener('change', handleUpdateQty)
+    })
 }
-const handleCartUpdate = () => {
+const handleCartUpdate = (renderItens = true) => {
     const badgeEl = document.querySelector('#btn-cart .badge')
     const emptyCartEl = document.querySelector('#empty-cart')
     const cartWithProductsEl = document.querySelector('#cart-with-products')
@@ -96,22 +119,24 @@ const handleCartUpdate = () => {
         badgeEl.innerText = totalCart
         cartWithProductsEl.classList.add('cart-with-products-show')
         emptyCartEl.classList.remove('empty-cart-show')
-        cartItensParent.innerHTML = ''
-        productsCart.forEach((product)=>{
-            cartItensParent.innerHTML += `<li class="cart-item">
-            <img src="${product.image}" alt="${product.name}" width="70"
-                height="70" />
-            <div>
-                <p class="h3">${product.name}</p>
-                <p class="price">R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
-            </div>
-            <input class="form-input" type="number" min="0" value="${product.qty}">
-            <button class="btn-remove-cart" data-id="${product.id}">
-                <i class="fas fa-trash-alt"></i>
-            </button>
-        </li>`
-        })
-        setupRemoveOfCart()
+        if (renderItens){
+            cartItensParent.innerHTML = ''
+            productsCart.forEach((product)=>{
+                cartItensParent.innerHTML += `<li class="cart-item">
+                <img src="${product.image}" alt="${product.name}" width="70"
+                    height="70" />
+                <div>
+                    <p class="h3">${product.name}</p>
+                    <p class="price">R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+                </div>
+                <input class="form-input input-qty-cart" type="number" min="0" value="${product.qty}" data-id="${product.id}" />
+                <button class="btn-remove-cart" data-id="${product.id}">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </li>`
+            })
+            setupCartEvents()
+        }    
         const totalPrice = productsCart.reduce((total, item)=>{
            return total + item.qty * item.price 
         }, 0)
