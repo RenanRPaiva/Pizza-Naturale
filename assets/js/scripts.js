@@ -52,15 +52,10 @@ const fetchProducts = () => {
 fetchProducts()
 
 // Products cart
-const productsCart = []
+let productsCart = []
 const addToCart = (event) => {
     const product = event.target.dataset
-    const index = productsCart.findIndex((item) => {
-        if (item.id == product.id) {
-            return true
-        }
-        return false
-    })
+    const index = productsCart.findIndex((item) => item.id == product.id)
     if (index == -1) {
         productsCart.push({
             ...product,
@@ -72,13 +67,21 @@ const addToCart = (event) => {
     }
     handleCartUpdate()
 }
-const removeOfCart = () => {
-
+function removeOfCart (){
+    const { id } = this.dataset
+    productsCart = productsCart.filter((product)=> product.id != id)
+    handleCartUpdate()
 }
 const setupAddToCart = () => {
     const btnAddCartEls = document.querySelectorAll('.btn-add-cart')
     btnAddCartEls.forEach(btn => {
         btn.addEventListener('click', addToCart)
+    })
+}
+const setupRemoveOfCart = () => {
+    const btnRemoveCartEls = document.querySelectorAll('.btn-remove-cart')
+    btnRemoveCartEls.forEach((btn) => {
+        btn.addEventListener('click', removeOfCart)
     })
 }
 const handleCartUpdate = () => {
@@ -87,9 +90,7 @@ const handleCartUpdate = () => {
     const cartWithProductsEl = document.querySelector('#cart-with-products')
     const cartItensParent = cartWithProductsEl.querySelector('ul')
     const cartTotalValueEl = document.querySelector('#cart-total-vale')
-    const totalCart = productsCart.reduce((total, item) => {
-        return total + item.qty
-    }, 0)    
+    const totalCart = productsCart.reduce((total, item) => total + item.qty, 0)    
     if(totalCart > 0){
         badgeEl.classList.add('badge-show')
         badgeEl.innerText = totalCart
@@ -105,7 +106,7 @@ const handleCartUpdate = () => {
                 <p class="price">R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
             </div>
             <input class="form-input" type="number" min="0" value="${product.qty}">
-            <button class="btn-remove-cart">
+            <button class="btn-remove-cart" data-id="${product.id}">
                 <i class="fas fa-trash-alt"></i>
             </button>
         </li>`
@@ -122,6 +123,3 @@ const handleCartUpdate = () => {
     }
 }
 handleCartUpdate()
-const setupRemoveOfCart = () => {
-
-}
