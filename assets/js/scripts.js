@@ -67,9 +67,9 @@ const addToCart = (event) => {
     }
     handleCartUpdate()
 }
-function removeOfCart (){
+function removeOfCart() {
     const { id } = this.dataset
-    productsCart = productsCart.filter((product)=> product.id != id)
+    productsCart = productsCart.filter((product) => product.id != id)
     handleCartUpdate()
 }
 const setupAddToCart = () => {
@@ -79,21 +79,21 @@ const setupAddToCart = () => {
     })
 }
 const hadlekeydown = event => {
-    if (event.key == '-' || event.key == '.'){
+    if (event.key == '-' || event.key == '.') {
         event.preventDefault()
-    }      
+    }
 }
 const handleUpdateQty = event => {
-    const { id } = event.target.dataset  
+    const { id } = event.target.dataset
     const qty = parseInt(event.target.value)
-    if (qty > 0){
-    const index = productsCart.findIndex(item => item.id == id)
-    productsCart[index].qty = qty
-    handleCartUpdate(false)
-   }else{
-    productsCart = productsCart.filter((product)=> product.id != id)
-    handleCartUpdate()
-   }    
+    if (qty > 0) {
+        const index = productsCart.findIndex(item => item.id == id)
+        productsCart[index].qty = qty
+        handleCartUpdate(false)
+    } else {
+        productsCart = productsCart.filter((product) => product.id != id)
+        handleCartUpdate()
+    }
 }
 const setupCartEvents = () => {
     const btnRemoveCartEls = document.querySelectorAll('.btn-remove-cart')
@@ -107,21 +107,23 @@ const setupCartEvents = () => {
         input.addEventListener('change', handleUpdateQty)
     })
 }
+const katCart = '@naturale/productsCart'
 const handleCartUpdate = (renderItens = true) => {
+    localStorage.setItem(katCart, JSON.stringify(productsCart))
     const badgeEl = document.querySelector('#btn-cart .badge')
     const emptyCartEl = document.querySelector('#empty-cart')
     const cartWithProductsEl = document.querySelector('#cart-with-products')
     const cartItensParent = cartWithProductsEl.querySelector('ul')
     const cartTotalValueEl = document.querySelector('#cart-total-vale')
-    const totalCart = productsCart.reduce((total, item) => total + item.qty, 0)    
-    if(totalCart > 0){
+    const totalCart = productsCart.reduce((total, item) => total + item.qty, 0)
+    if (totalCart > 0) {
         badgeEl.classList.add('badge-show')
         badgeEl.innerText = totalCart
         cartWithProductsEl.classList.add('cart-with-products-show')
         emptyCartEl.classList.remove('empty-cart-show')
-        if (renderItens){
+        if (renderItens) {
             cartItensParent.innerHTML = ''
-            productsCart.forEach((product)=>{
+            productsCart.forEach((product) => {
                 cartItensParent.innerHTML += `<li class="cart-item">
                 <img src="${product.image}" alt="${product.name}" width="70"
                     height="70" />
@@ -136,9 +138,9 @@ const handleCartUpdate = (renderItens = true) => {
             </li>`
             })
             setupCartEvents()
-        }    
-        const totalPrice = productsCart.reduce((total, item)=>{
-           return total + item.qty * item.price 
+        }
+        const totalPrice = productsCart.reduce((total, item) => {
+            return total + item.qty * item.price
         }, 0)
         cartTotalValueEl.innerText = 'R$ ' + totalPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })
     } else {
@@ -147,4 +149,11 @@ const handleCartUpdate = (renderItens = true) => {
         cartWithProductsEl.classList.remove('cart-with-products-show')
     }
 }
-handleCartUpdate()
+const initCart = () => {
+    const savedProducts = localStorage.getItem(katCart)
+    if (savedProducts) {
+        productsCart = JSON.parse(savedProducts)
+    }
+    handleCartUpdate()
+}
+initCart()
