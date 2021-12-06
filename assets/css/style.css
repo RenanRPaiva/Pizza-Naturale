@@ -179,6 +179,9 @@ h3, .h3{
     background-color: #ddd;
     color: #424242;
     padding: 10px 15px;
+    transition: all 0.3s linear;
+    text-decoration: none;
+    display: block;
 }
 .btn-main{
     background-color: var(--main-color);
@@ -321,7 +324,7 @@ h3, .h3{
     padding: 12px 0;
 }
 .cart-item img{
-    object-fit: cover;
+    object-fit:cover; 
     border-radius: 5px;
 }
 .cart-item input{
@@ -364,6 +367,33 @@ h3, .h3{
     border-radius: 4px;
     font-size: 16px;
     padding: 9px;
+}
+.form-input::placeholder, 
+.form-input:-ms-input-placeholder,
+.form-input::-ms-input-placeholder{
+    color: #999999;
+    opacity: 1;
+}
+.form-group {
+    margin-bottom: 12px;
+}
+.form-group label{
+    display: block;
+    color: #000;
+}
+.form-group .form-input {
+    width: 100%;
+}
+.form-checkout{
+    max-width:  424px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom: 50px;
+}
+.form-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
 
 /* ALERTS */
