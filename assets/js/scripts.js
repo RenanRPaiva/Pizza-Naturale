@@ -191,3 +191,14 @@ const handleCheckoutSubmit = event => {
 }
 const formCheckoutEl = document.querySelector('.form-checkout')
 formCheckoutEl?.addEventListener('submit', handleCheckoutSubmit)
+
+// Masks
+const inputPhoneEl = document.querySelector('#input-phone')
+console.log(inputPhoneEl)
+IMask(inputPhoneEl, {
+    mask: '(00) 00000-0000'
+})
+const inputCepEl = document.querySelector('#input-cep')
+IMask(inputCepEl, {
+    mask: '00000-000'
+})
