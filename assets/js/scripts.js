@@ -194,7 +194,6 @@ formCheckoutEl?.addEventListener('submit', handleCheckoutSubmit)
 
 // Masks
 const inputPhoneEl = document.querySelector('#input-phone')
-console.log(inputPhoneEl)
 IMask(inputPhoneEl, {
     mask: '(00) 00000-0000'
 })
