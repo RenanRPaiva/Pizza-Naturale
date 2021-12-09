@@ -215,5 +215,8 @@ inputCepEl?.addEventListener("blur", () => {
             address.value = body.logradouro || ''
             neighborhood.value = body.bairro || ''
             city.value = body.localidade || ''
-            })
+            window.setTimeout(function () {
+                document.querySelector('#input-number').focus();
+            }, 0);
+        })
 })
