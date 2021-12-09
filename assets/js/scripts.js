@@ -52,7 +52,7 @@ const fetchProducts = () => {
 
         })
 }
-if (groupsRootEl){
+if (groupsRootEl) {
     fetchProducts()
 }
 
@@ -166,18 +166,18 @@ initCart()
 
 const handleCheckoutSubmit = event => {
     event.preventDefault()
-    if (productsCart.length ==0) {
+    if (productsCart.length == 0) {
         alert('Nenhum produto no carrinho.')
         return
     }
     let text = "Confira o pedido\n-----------------------------\n\n"
     productsCart.forEach((product) => {
-        text += `*${product.qty}x ${product.name}* - R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2})}\n`
+        text += `*${product.qty}x ${product.name}* - R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}\n`
     })
     const totalPrice = productsCart.reduce((total, item) => {
         return total + item.qty * item.price
     }, 0)
-    text += `\n*Taxa de entrega:* a combinar:\n*Total: R$ ${totalPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2})}*`
+    text += `\n*Taxa de entrega:* a combinar:\n*Total: R$ ${totalPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}*`
     text += `\n\n-----------------------------\n\n`
     text += `*${event.target.elements['input-name'].value}*`
     text += `\n${event.target.elements['input-phone'].value}\n\n`
@@ -201,4 +201,19 @@ IMask(inputPhoneEl, {
 const inputCepEl = document.querySelector('#input-cep')
 IMask(inputCepEl, {
     mask: '00000-000'
+})
+
+// Busca CEP
+inputCepEl?.addEventListener("blur", () => {
+    const cepValue = inputCepEl.value.replace('-', '')
+    fetch(` http://viacep.com.br/ws/${cepValue}/json/`)
+        .then(response => response.json())
+        .then(body => {
+            const address = document.querySelector('#input-address')
+            const neighborhood = document.querySelector('#input-neighborhood')
+            const city = document.querySelector('#input-city')
+            address.value = body.logradouro || ''
+            neighborhood.value = body.bairro || ''
+            city.value = body.localidade || ''
+            })
 })
