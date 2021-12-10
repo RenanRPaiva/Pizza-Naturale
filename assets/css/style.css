@@ -145,7 +145,7 @@ h3, .h3{
 }
 .card img {
     width: 100%;
-    height: auto;
+    height: 150px;
     display: block;
 }
 .card-content{

@@ -194,13 +194,17 @@ formCheckoutEl?.addEventListener('submit', handleCheckoutSubmit)
 
 // Masks
 const inputPhoneEl = document.querySelector('#input-phone')
-IMask(inputPhoneEl, {
-    mask: '(00) 00000-0000'
-})
 const inputCepEl = document.querySelector('#input-cep')
-IMask(inputCepEl, {
-    mask: '00000-000'
-})
+if (inputPhoneEl) {
+    IMask(inputPhoneEl, {
+        mask: '(00) 00000-0000'
+    })
+}
+if (inputCepEl) {
+    IMask(inputCepEl, {
+        mask: '00000-000'
+    })
+}
 
 // Busca CEP
 inputCepEl?.addEventListener("blur", () => {
@@ -214,8 +218,6 @@ inputCepEl?.addEventListener("blur", () => {
             address.value = body.logradouro || ''
             neighborhood.value = body.bairro || ''
             city.value = body.localidade || ''
-            window.setTimeout(function () {
-                document.querySelector('#input-number').focus();
-            }, 0);
+            document.querySelector('#input-number').focus();            
         })
 })
