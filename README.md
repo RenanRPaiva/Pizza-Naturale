@@ -90,6 +90,10 @@ git clone https://github.com/RenanRPaiva/Pizza-Naturale.git
 # Integrações
 - WhatsApp: Quando o pedido é finalizado, é enviado para o WhatsApp do estabelecimento uma mensagem com os produtos selecionados pelo cliente e os dados que ele preencheu no formulário de finalizar pedido.
 
+# Autor
+Renan Rodrigues S. Paiva - renan_13rj@yahoo.com.br
+
+https://www.linkedin.com/in/renan-r-s-paiva/
 
 # Agradecimentos
 
